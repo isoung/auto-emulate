@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "An easier way to automate the creation of emulators/simulators",
   "main": "./dist/index.js",
+  "types": "./src/index.ts",
   "scripts": {
     "build": "cd src && tsc",
     "prepublish": "yarn run build",
