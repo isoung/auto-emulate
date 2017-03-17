@@ -6,7 +6,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "build": "cd src && tsc",
-    "prepublish": "yarn run build",
+    "prepublish": "npm run build",
     "test": "",
     "tslint": "tslint -c .tslint.json -t verbose './**/*.ts' -e './node_modules/**/*'"
   },
