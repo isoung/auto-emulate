@@ -1,12 +1,12 @@
 {
   "name": "auto-emulate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An easier way to automate the creation of emulators/simulators",
   "main": "./dist/index.js",
   "types": "./src/index.ts",
   "scripts": {
     "build": "cd src && tsc",
-    "prepublish": "yarn run build",
+    "prepublish": "npm run build",
     "test": "",
     "tslint": "tslint -c .tslint.json -t verbose './**/*.ts' -e './node_modules/**/*'"
   },
