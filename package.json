@@ -1,13 +1,16 @@
 {
   "name": "auto-emulate",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "An easier way to automate the creation of emulators/simulators",
   "main": "./dist/index.js",
   "types": "./src/index.ts",
+  "bin": {
+    "auto-emulate": "dist/bin/auto-emulate.js"
+  },
   "scripts": {
     "build": "cd src && tsc",
     "prepublish": "npm run build",
-    "test": "",
+    "test": "mocha --compilers ts:ts-node/register --reporter list ./test/**/*.ts",
     "tslint": "tslint -c .tslint.json -t verbose './**/*.ts' -e './node_modules/**/*'"
   },
   "repository": {
@@ -28,10 +31,15 @@
   },
   "homepage": "https://github.com/isoung/auto-emulate#readme",
   "devDependencies": {
-    "@types/node": "7.0.8",
+    "@types/chai": "^3.4.35",
     "@types/core-js": "0.9.37",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "7.0.8",
     "@types/sleep": "0.0.5",
+    "@types/yargs": "^6.6.0",
+    "chai": "^3.5.0",
     "core-js": "2.4.1",
+    "mocha": "^3.2.0",
     "ts-node": "2.1.0",
     "tslint": "4.5.1",
     "typescript": "2.2.1"

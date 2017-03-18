@@ -37,8 +37,13 @@ exports.checkForAndroidEmulator = function () {
     }
 };
 exports.waitForAndroidEmulator = function (timeout) {
+    var startTime = Math.round(new Date().getTime() / 1000);
     while (!exports.checkForAndroidEmulator()) {
         sleep_1.sleep(1);
+        var currentTime = Math.round(new Date().getTime() / 1000);
+        if (timeout !== undefined && (currentTime - startTime) > timeout) {
+            break;
+        }
     }
 };
 //# sourceMappingURL=emulate.js.map
