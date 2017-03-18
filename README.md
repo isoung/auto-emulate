@@ -12,6 +12,7 @@ Starts an emulator with the capability to wait for the emulator to start.
 * JAVA_HOME set to Java jdk installation
 
 ## Usage
+### From Node/JS
 ```
   var autoEmulate = require('auto-emulate);
 
@@ -20,6 +21,13 @@ Starts an emulator with the capability to wait for the emulator to start.
   });
 
   autoEmulate.waitForAndroidEmulator();
+```
+
+### From CLI
+```
+  auto-emulate -n test_device -w 15 -t android
+
+
 ```
 
 ## Road Map

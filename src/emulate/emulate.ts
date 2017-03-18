@@ -39,7 +39,13 @@ export const checkForAndroidEmulator = (): boolean => {
 };
 
 export const waitForAndroidEmulator = (timeout?: number) => {
+  const startTime = Math.round(new Date().getTime() / 1000);
   while (!checkForAndroidEmulator()) {
     sleep(1);
+
+    const currentTime = Math.round(new Date().getTime() / 1000);
+    if (timeout !== undefined && (currentTime - startTime) > timeout) {
+      throw new Error('Timeout occurred while waiting for device to boot');
+    }
   }
 };
